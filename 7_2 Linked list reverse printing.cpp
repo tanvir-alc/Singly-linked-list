@@ -19,11 +19,20 @@ void insert_at_tail(Node* &head,Node* &tail,int val)
     if (head==NULL)
     {
        head=new_node;
-       tail = new_node;
+       tail=new_node;
        return;
     } 
     tail->next=new_node;
     tail=tail->next;
+}
+void print_reverse(Node* temp)
+{
+    if(temp ==NULL)
+    {
+        return;  
+    }
+    print_reverse(temp->next);
+    cout<< temp->val <<endl;
 }
 
 void print(Node* head)
@@ -31,10 +40,10 @@ void print(Node* head)
     Node * tmp =head;
     while (tmp!= NULL)
     {
+        return;
+    }
         cout<<tmp->val<<" ";
         tmp=tmp->next;
-    }
-    
 }
 int main() {
 
@@ -56,9 +65,8 @@ while(1)
     insert_at_tail(head,tail,val);
 }
 
-
-   
-    print(head);
+    // print(head);
+    print_reverse(head);
 
     return 0;
 }

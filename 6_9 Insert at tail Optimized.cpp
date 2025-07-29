@@ -20,6 +20,7 @@ void insert_at_tail(Node* &head,Node* &tail,int val)
     if (head==NULL)
     {
        head=new_node;
+       tail=new_node;
        return;
     } 
     tail->next=new_node;
